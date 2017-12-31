@@ -10,14 +10,15 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <div th:unless="${jobs} and ${jobs.size()}">
-        <h2>No Results</h2>
-    </div>
+    <!--<div th:unless="${jobs} and ${jobs.size()}">-->
+        <!--<h2>No Results</h2>-->
+    <!--</div>-->
 
     <div th:fragment="jobs-list">
-        <div th:if="${jobs} and ${jobs.size()}">
 
+        <div th:if="${jobs}">
             <h3 th:text="${jobs.size() + ' Result(s)'}"></h3>
+
 
             <div  th:each="job : ${jobs}">
                 <table  th:fragment="single-job" class="job-listing">

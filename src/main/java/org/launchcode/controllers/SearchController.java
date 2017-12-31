@@ -30,7 +30,9 @@ public class SearchController {
     public String search(Model model,
                          @ModelAttribute SearchForm searchForm) {
 
-        ArrayList<Job> jobs;
+        ArrayList<Job> jobs = new ArrayList<>();
+
+
 
         if (searchForm.getSearchField().equals(JobFieldType.ALL)) {
             jobs = jobData.findByValue(searchForm.getKeyword());
